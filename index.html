@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Starve Boss Tracker</title>
+</head>
+
+<body>
+    <div class="header-container">
+        <img id="mainLogo" src="./res/logo/dst-logo.png" alt="Game Logo" class="game-logo">
+    </div>
+
+    <div class="slider-container">
+        <div class="slider">
+            <button class="slider-item active" data-game="dst" data-logo="./res/logo/dst-logo.png">
+                <img src="./res/icon/dst-icon.png" alt="DST">
+            </button>
+            <button class="slider-item" data-game="ds" data-logo="./res/logo/ds-logo.png">
+                <img src="./res/icon/ds-icon.png" alt="DS">
+            </button>
+            <button class="slider-item" data-game="rog" data-logo="./res/logo/rog-logo.png">
+                <img src="./res/icon/rog-icon.png" alt="Reign of Giants">
+            </button>
+            <button class="slider-item" data-game="sw" data-logo="./res/logo/sw-logo.png">
+                <img src="./res/icon/sw-icon.png" alt="Shipwrecked">
+            </button>
+            <button class="slider-item" data-game="ham" data-logo="./res/logo/ham-logo.png">
+                <img src="./res/icon/ham-icon.png" alt="Hamlet">
+            </button>
+        </div>
+    </div>
+
+    <div style="width: 100%; max-width: 800px; margin: 0 auto 20px; text-align: center;">
+        <button id="resetAllBtn">Reset All Counts</button>
+    </div>
+
+    <!-- DST Table -->
+    <table class="game-table active" data-game="dst">
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Ancient_Fuelweaver.png" class="boss-logo" alt="Ancient Fuelweaver">
+                    <span class="boss-name">Ancient Fuelweaver</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Ancient_Guardian.png" class="boss-logo" alt="Ancient Guardian">
+                    <span class="boss-name">Ancient Guardian</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Antlion.png" class="boss-logo" alt="Antlion">
+                    <span class="boss-name">Antlion</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/rog/Bearger.png" class="boss-logo" alt="Bearger">
+                    <span class="boss-name">Bearger</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Bee_Queen.png" class="boss-logo" alt="Bee Queen">
+                    <span class="boss-name">Bee Queen</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Boarilla.png" class="boss-logo" alt="Boarilla">
+                    <span class="boss-name">Boarilla</span>
+                    <span class="ps">(During The Forge event)</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Celestial_Champion.png" class="boss-logo" alt="Celestial Champion">
+                    <span class="boss-name">Celestial Champion</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Crab_King.png" class="boss-logo" alt="Crab King">
+                    <span class="boss-name">Crab King</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Crystal_Deerclops.png" class="boss-logo" alt="Crystal Deerclops">
+                    <span class="boss-name">Crystal Deerclops</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Deerclops.png" class="boss-logo" alt="Deerclops">
+                    <span class="boss-name">Deerclops</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/rog/Dragonfly.png" class="boss-logo" alt="Dragonfly">
+                    <span class="boss-name">Dragonfly</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Eye_of_Terror.png" class="boss-logo" alt="Eye of Terror">
+                    <span class="boss-name">Eye of Terror</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Frostjaw.png" class="boss-logo" alt="Frostjaw">
+                    <span class="boss-name">Frostjaw</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Grand_Forge_Boarrior.png" class="boss-logo" alt="Grand Forge Boarrior">
+                    <span class="boss-name">Grand Forge Boarrior</span>
+                    <span class="ps">(During The Forge event)</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Great_Depths_Worm.png" class="boss-logo" alt="Great Depths Worm">
+                    <span class="boss-name">Great Depths Worm</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Infernal_Swineclops.png" class="boss-logo" alt="Infernal Swineclops">
+                    <span class="boss-name">Infernal Swineclops</span>
+                    <span class="ps">(During The Forge event)</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Klaus.png" class="boss-logo" alt="Klaus">
+                    <span class="boss-name">Klaus</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Lord_of_the_Fruit_Flies.png" class="boss-logo" alt="Lord of the Fruit Flies">
+                    <span class="boss-name">Lord of the Fruit Flies</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Malbatross.png" class="boss-logo" alt="Malbatross">
+                    <span class="boss-name">Malbatross</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Misery_Toadstool.png" class="boss-logo" alt="Misery Toadstool">
+                    <span class="boss-name">Misery Toadstool</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/rog/Goose.png" class="boss-logo" alt="Moose/Goose">
+                    <span class="boss-name">Moose/Goose</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Nightmare_Werepig.png" class="boss-logo" alt="Nightmare Werepig">
+                    <span class="boss-name">Nightmare Werepig</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Reanimated_Skeleton_Caves.png" class="boss-logo" alt="Reanimated Skeleton (Caves)">
+                    <span class="boss-name">Reanimated Skeleton</span>
+                    <span class="ps">(Caves)</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Reanimated_Skeleton_Forest.png" class="boss-logo" alt="Reanimated Skeleton (Forest)">
+                    <span class="boss-name">Reanimated Skeleton</span>
+                    <span class="ps">(Forest)</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Rhinocebro.png" class="boss-logo" alt="Rhinocebro">
+                    <span class="boss-name">Rhinocebro</span>
+                    <span class="ps">(During The Forge event)</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Scrappy_Werepig.png" class="boss-logo" alt="Scrappy Werepig">
+                    <span class="boss-name">Scrappy Werepig</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Shadow_Pieces.png" class="boss-logo" alt="Shadow Pieces">
+                    <span class="boss-name">Shadow Pieces</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Spider_Queen.png" class="boss-logo" alt="Spider Queen">
+                    <span class="boss-name">Spider Queen</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Toadstool.png" class="boss-logo" alt="Toadstool">
+                    <span class="boss-name">Toadstool</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Treeguard.png" class="boss-logo" alt="Treeguard">
+                    <span class="boss-name">Treeguard</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/Twins_of_Terror.png" class="boss-logo" alt="Twins of Terror">
+                    <span class="boss-name">Twins of Terror</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/dst/W.A.R.B.O.T..png" class="boss-logo" alt="W.A.R.B.O.T.">
+                    <span class="boss-name">W.A.R.B.O.T.</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+    </table>
+
+    <!-- DS Table -->
+    <table class="game-table" data-game="ds">
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Ancient_Guardian.png" class="boss-logo" alt="Ancient Guardian">
+                    <span class="boss-name">Ancient Guardian</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Deerclops.png" class="boss-logo" alt="Deerclops">
+                    <span class="boss-name">Deerclops</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Spider_Queen.png" class="boss-logo" alt="Spider Queen">
+                    <span class="boss-name">Spider Queen</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Treeguard.png" class="boss-logo" alt="Treeguard">
+                    <span class="boss-name">Treeguard</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+    </table>
+
+    <!-- Reign of Giants Table -->
+    <table class="game-table" data-game="rog">
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Ancient_Guardian.png" class="boss-logo" alt="Ancient Guardian">
+                    <span class="boss-name">Ancient Guardian</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/rog/Bearger.png" class="boss-logo" alt="Bearger">
+                    <span class="boss-name">Bearger</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Deerclops.png" class="boss-logo" alt="Deerclops">
+                    <span class="boss-name">Deerclops</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/rog/Dragonfly.png" class="boss-logo" alt="Dragonfly">
+                    <span class="boss-name">Dragonfly</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/rog/Goose.png" class="boss-logo" alt="Moose/Goose">
+                    <span class="boss-name">Moose/Goose</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Spider_Queen.png" class="boss-logo" alt="Spider Queen">
+                    <span class="boss-name">Spider Queen</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ds/Treeguard.png" class="boss-logo" alt="Treeguard">
+                    <span class="boss-name">Treeguard</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+    </table>
+
+    <!-- Shipwreck Table -->
+    <table class="game-table" data-game="sw">
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/sw/Palm_Treeguard.png" class="boss-logo" alt="Palm Treeguard">
+                    <span class="boss-name">Palm Treeguard</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/sw/Quacken.png" class="boss-logo" alt="Quacken">
+                    <span class="boss-name">Quacken</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/sw/Sealnado.png" class="boss-logo" alt="Sealnado">
+                    <span class="boss-name">Sealnado</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/sw/Tiger_Shark.png" class="boss-logo" alt="Tiger Shark">
+                    <span class="boss-name">Tiger Shark</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+    </table>
+
+    <!-- Hamlet Table -->
+    <table class="game-table" data-game="ham">
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ham/Ancient_Herald.png" class="boss-logo" alt="Ancient Herald">
+                    <span class="boss-name">Ancient Herald</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ham/Large_Iron_Hulk.png" class="boss-logo" alt="Large Iron Hulk">
+                    <span class="boss-name">Large Iron Hulk</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ham/Pugalisk.png" class="boss-logo" alt="Pugalisk">
+                    <span class="boss-name">Pugalisk</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+        <tr>
+            <td class="button">-</td>
+            <td class="boss-column">
+                <div class="boss-container">
+                    <img src="./res/boss/ham/Queen_Womant.png" class="boss-logo" alt="Queen Womant">
+                    <span class="boss-name">Queen Womant</span>
+                </div>
+            </td>
+            <td class="colon">:</td>
+            <td class="count">0</td>
+            <td class="button">+</td>
+        </tr>
+    </table>
+    
+    <footer>
+            This boss tracker app is for Don't Starve games and made by Asid.
+    </footer>
+</body>
+
+</html>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #943318;
+        font-size: 16px;
+        overflow-x: hidden;
+        background-image: url('./res/background/background-1080p.png');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    @media (min-width: 2560px) {
+        body {
+            background-image: url('./res/background/background-4k.png');
+        }
+    }
+
+    .header-container {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .game-logo {
+        max-height: 300px;
+        width: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .slider-container {
+        width: 100%;
+        margin: 20px 0;
+        padding: 0 20px;
+    }
+
+    .slider {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px;
+        overflow-x: auto;
+    }
+
+    .slider-item {
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .slider-item img {
+        height: 60px;
+        width: auto;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+    .slider-item.active img {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    .slider-item:hover img {
+        opacity: 0.9;
+    }
+
+    table {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: #f5e6d3;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 2px solid #6b4423;
+        vertical-align: middle;
+    }
+
+    .boss-column {
+        display: table-cell;
+        font-weight: bold;
+        color: #4a3520;
+        font-size: 1.2em;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .boss-logo {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+    }
+
+    .boss-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .boss-name {
+        position: relative;
+    }
+
+    .colon {
+        font-size: 1.4em;
+        color: #6b4423;
+        font-weight: bold;
+        min-width: 20px;
+    }
+
+    .count {
+        font-size: 1.4em;
+        color: #6b4423;
+        font-weight: bold;
+        min-width: 80px;
+    }
+
+    .button {
+        color: #6b4423;
+        width: 60px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.4em;
+        font-weight: bold;
+        user-select: none;
+    }
+
+    .button:hover {
+        background-color: #6b4423;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .game-table:not(.active) {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .boss-column {
+            font-size: 1em;
+            gap: 10px;
+        }
+
+        .boss-logo {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .ps {
+        font-size: 0.8em;
+        color: #6b4423;
+        font-style: italic;
+    }
+
+    footer {
+		text-align: center;
+		margin: 20px 0;
+		color: #967050;
+	}
+
+    #resetAllBtn {
+        background-color: #6b4423;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1em;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #resetAllBtn:hover {
+        background-color: #4d3019;
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const sliderItems = document.querySelectorAll('.slider-item');
+    const gameTables = document.querySelectorAll('.game-table');
+    const mainLogo = document.getElementById('mainLogo');
+
+    function getBossKey(row) {
+        const game = row.closest('table').dataset.game;
+        const name = row.querySelector('.boss-name').textContent.trim();
+        return `${game}_${name}`.replace(/\s+/g, '_'); // e.g., dst_Ancient_Fuelweaver
+    }
+
+    function loadCounts() {
+        document.querySelectorAll('table.game-table tr').forEach(row => {
+            const countCell = row.querySelector('td.count');
+            const key = getBossKey(row);
+            const saved = localStorage.getItem(key);
+            if (saved !== null) {
+                countCell.textContent = saved;
+            }
+        });
+    }
+
+    function saveCount(row) {
+        const countCell = row.querySelector('td.count');
+        const key = getBossKey(row);
+        localStorage.setItem(key, countCell.textContent);
+    }
+
+    sliderItems.forEach(item => {
+        item.addEventListener('click', () => {
+            sliderItems.forEach(i => i.classList.remove('active'));
+            gameTables.forEach(table => table.classList.remove('active'));
+
+            item.classList.add('active');
+            const game = item.dataset.game;
+            mainLogo.src = item.dataset.logo;
+            document.querySelector(`.game-table[data-game="${game}"]`).classList.add('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.tagName === 'TD') {
+            const row = e.target.closest('tr');
+            const counter = row.querySelector('td.count');
+            if (e.target.textContent === '+') {
+                counter.textContent = parseInt(counter.textContent) + 1;
+                saveCount(row);
+            } else if (e.target.textContent === '-') {
+                counter.textContent = Math.max(0, parseInt(counter.textContent) - 1);
+                saveCount(row);
+            }
+        }
+    });
+
+    window.addEventListener('load', loadCounts);
+
+    const resetAllBtn = document.getElementById('resetAllBtn');
+
+    resetAllBtn.addEventListener('click', () => {
+    if (typeof Swal !== 'undefined') {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This will reset all boss kill counts!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#6b4423',
+            cancelButtonColor: '#aaa',
+            confirmButtonText: 'Yes, reset all',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.clear();
+                document.querySelectorAll('td.count').forEach(td => {
+                    td.textContent = '0';
+                });
+                Swal.fire({
+                    title: 'Reset!',
+                    text: 'All boss kill counts have been reset.',
+                    icon: 'success',
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            }
+        });
+    } else {
+        const confirmed = confirm("Are you sure you want to reset all boss kill counts?");
+        if (confirmed) {
+            localStorage.clear();
+            document.querySelectorAll('td.count').forEach(td => {
+                td.textContent = '0';
+            });
+            alert('All boss kill counts have been reset.');
+        }
+    }
+});
+</script>
