@@ -249,7 +249,8 @@
             <td class="button">-</td>
             <td class="boss-column">
                 <div class="boss-container">
-                    <img src="./res/boss/dst/Lord_of_the_Fruit_Flies.png" class="boss-logo" alt="Lord of the Fruit Flies">
+                    <img src="./res/boss/dst/Lord_of_the_Fruit_Flies.png" class="boss-logo"
+                        alt="Lord of the Fruit Flies">
                     <span class="boss-name">Lord of the Fruit Flies</span>
                 </div>
             </td>
@@ -309,7 +310,8 @@
             <td class="button">-</td>
             <td class="boss-column">
                 <div class="boss-container">
-                    <img src="./res/boss/dst/Reanimated_Skeleton_Caves.png" class="boss-logo" alt="Reanimated Skeleton (Caves)">
+                    <img src="./res/boss/dst/Reanimated_Skeleton_Caves.png" class="boss-logo"
+                        alt="Reanimated Skeleton (Caves)">
                     <span class="boss-name">Reanimated Skeleton</span>
                     <span class="ps">(Caves)</span>
                 </div>
@@ -322,7 +324,8 @@
             <td class="button">-</td>
             <td class="boss-column">
                 <div class="boss-container">
-                    <img src="./res/boss/dst/Reanimated_Skeleton_Forest.png" class="boss-logo" alt="Reanimated Skeleton (Forest)">
+                    <img src="./res/boss/dst/Reanimated_Skeleton_Forest.png" class="boss-logo"
+                        alt="Reanimated Skeleton (Forest)">
                     <span class="boss-name">Reanimated Skeleton</span>
                     <span class="ps">(Forest)</span>
                 </div>
@@ -673,9 +676,9 @@
             <td class="button">+</td>
         </tr>
     </table>
-    
+
     <footer>
-            This boss tracker app is for Don't Starve games and made by Asid.
+        This boss tracker app is for Don't Starve games and made by Asid.
     </footer>
 </body>
 
@@ -839,14 +842,42 @@
     }
 
     @media (max-width: 768px) {
+        body {
+            overflow-x: hidden;
+        }
+
+        table {
+            width: auto;
+            max-width: 100%;
+        }
+
+        td {
+            padding: 10px 5px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
         .boss-column {
             font-size: 1em;
             gap: 10px;
         }
 
         .boss-logo {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .count {
+            min-width: 40px;
+        }
+
+        .button {
+            width: 40px;
+        }
+
+        .slider-item img {
+            height: 50px;
+            width: auto;
         }
     }
 
@@ -857,10 +888,10 @@
     }
 
     footer {
-		text-align: center;
-		margin: 20px 0;
-		color: #967050;
-	}
+        text-align: center;
+        margin: 20px 0;
+        color: #967050;
+    }
 
     #resetAllBtn {
         background-color: #6b4423;
@@ -938,40 +969,40 @@
     const resetAllBtn = document.getElementById('resetAllBtn');
 
     resetAllBtn.addEventListener('click', () => {
-    if (typeof Swal !== 'undefined') {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "This will reset all boss kill counts!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#6b4423',
-            cancelButtonColor: '#aaa',
-            confirmButtonText: 'Yes, reset all',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
+        if (typeof Swal !== 'undefined') {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "This will reset all boss kill counts!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#6b4423',
+                cancelButtonColor: '#aaa',
+                confirmButtonText: 'Yes, reset all',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.clear();
+                    document.querySelectorAll('td.count').forEach(td => {
+                        td.textContent = '0';
+                    });
+                    Swal.fire({
+                        title: 'Reset!',
+                        text: 'All boss kill counts have been reset.',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false
+                    });
+                }
+            });
+        } else {
+            const confirmed = confirm("Are you sure you want to reset all boss kill counts?");
+            if (confirmed) {
                 localStorage.clear();
                 document.querySelectorAll('td.count').forEach(td => {
                     td.textContent = '0';
                 });
-                Swal.fire({
-                    title: 'Reset!',
-                    text: 'All boss kill counts have been reset.',
-                    icon: 'success',
-                    timer: 1500,
-                    showConfirmButton: false
-                });
+                alert('All boss kill counts have been reset.');
             }
-        });
-    } else {
-        const confirmed = confirm("Are you sure you want to reset all boss kill counts?");
-        if (confirmed) {
-            localStorage.clear();
-            document.querySelectorAll('td.count').forEach(td => {
-                td.textContent = '0';
-            });
-            alert('All boss kill counts have been reset.');
         }
-    }
-});
+    });
 </script>
