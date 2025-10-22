@@ -1117,7 +1117,12 @@
             item.classList.add('active');
             const game = item.dataset.game;
             mainLogo.src = item.dataset.logo;
-            document.querySelector(`.game-table[data-game="${game}"]`).classList.add('active');
+            const table = document.querySelector(`.game-table[data-game="${game}"]`);
+            table.classList.add('active');
+            
+            if (sortSelect.value) {
+                sortTable(table, sortSelect.value);
+            }
         });
     });
 
@@ -1141,24 +1146,7 @@
         saveSettings();
     });
 
-    window.addEventListener('load', () => {
-        const savedSort = localStorage.getItem('sortPreference');
-        if (savedSort) {
-            sortSelect.value = savedSort;
-            const activeTable = document.querySelector('.game-table.active');
-            sortTable(activeTable, savedSort);
-        }
-    });
-
-    sliderItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const game = item.dataset.game;
-            const table = document.querySelector(`.game-table[data-game="${game}"]`);
-            if (sortSelect.value !== 'default') {
-                sortTable(table, sortSelect.value);
-            }
-        });
-    });
+    window.addEventListener('load', loadSettings);
 
     const showForgeBosses = document.getElementById('showForgeBosses');
     const showReanimated = document.getElementById('showReanimated');
